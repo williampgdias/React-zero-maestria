@@ -2,11 +2,12 @@
 import './App.css';
 
 // Importando Imagens
-// import Connemara from './assets/connemara.jpeg';
+import Connemara from './assets/connemara.jpeg';
 
 // Importando Componentes
 import ManageData from './components/ManageData';
 import ListRender from './components/ListRender';
+import ConditionalRender from './components/ConditionalRender';
 
 function App() {
   return (
@@ -14,14 +15,14 @@ function App() {
       <h1>Avançando em React</h1>
 
       {/* Imagem em public */}
-      <div>{/* <img src='/img1.jpeg' alt='Paisagem' /> */}</div>
+      <div><img src='/img1.jpeg' alt='Paisagem' /></div>
 
       {/* Imagem em Assets */}
-      <div>{/* <img src={Connemara} alt='Cidade de Connemara vista de longe' /> */}</div>
+      <div><img src={Connemara} alt='Cidade de Connemara vista de longe' /></div>
 
       <ManageData />
-
       <ListRender />
+      <ConditionalRender />
     </div>
   );
 }
