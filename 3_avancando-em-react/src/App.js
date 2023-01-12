@@ -1,6 +1,11 @@
+//Importando CSS
 import './App.css';
 
+// Importando Imagens
 import Connemara from './assets/connemara.jpeg';
+
+// Importando Componentes
+import ManageData from './components/ManageData';
 
 function App() {
   return (
@@ -9,13 +14,15 @@ function App() {
 
       {/* Imagem em public */}
       <div>
-        <img src='/img1.jpeg' alt='Paisagem' />
+        {/* <img src='/img1.jpeg' alt='Paisagem' /> */}
       </div>
       
       {/* Imagem em Assets */}
       <div>
-        <img src={Connemara} alt='Cidade de Connemara vista de longe' />
+        {/* <img src={Connemara} alt='Cidade de Connemara vista de longe' /> */}
       </div>
+
+      <ManageData />
     </div>
   );
 }
