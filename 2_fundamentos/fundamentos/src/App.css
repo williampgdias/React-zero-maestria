@@ -13,3 +13,7 @@ body {
   max-width: 600px;
   margin: auto;
 }
+
+.title-red {
+  color: red;
+}
