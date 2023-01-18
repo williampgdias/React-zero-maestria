@@ -13,6 +13,7 @@ import { useState } from 'react';
 import CarDetails from './components/CarDetails';
 import Fragment from './components/Fragment';
 import Container from './components/Container';
+import ExecuteFunction from './components/ExecuteFunction';
 
 function App() {
   const name = 'Bárbara';
@@ -54,7 +55,7 @@ function App() {
       <CarDetails brand='Fiat' color='Branco' km={4500} newCar={false} />
       {/* LOOP EM ARRAY DE OBJETOS */}
       {cars.map((car) => (
-        <CarDetails brand={car.brand} color={car.color} km={car.km} newCar={car.newCar} />
+        <CarDetails key={car.id} brand={car.brand} color={car.color} km={car.km} newCar={car.newCar} />
       ))}
       {/* FRAGMENT */}
       <Fragment propFragment='teste' />
@@ -66,6 +67,7 @@ function App() {
         <h3>Testando o container</h3>
       </Container>
       {/* EXECUTAR FUNÇÃO */}
+      <ExecuteFunction myFunction={showMessage} />
     </div>
   );
 }
