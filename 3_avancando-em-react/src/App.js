@@ -14,6 +14,8 @@ import CarDetails from './components/CarDetails';
 import Fragment from './components/Fragment';
 import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
+import Message from './components/Message';
+import ChangeMessageState from './components/ChangeMessageState';
 
 function App() {
   const name = 'Bárbara';
@@ -27,6 +29,12 @@ function App() {
 
   const showMessage = () => {
     console.log('Evento do componente pai.');
+  };
+
+  const [message, setMessage] = useState('');
+
+  const handleMessage = (msg) => {
+    setMessage(msg);
   };
 
   return (
@@ -48,17 +56,22 @@ function App() {
       <ConditionalRender />
       <ShowUser name={name} />
       <ShowUser name='William' />
+
       {/* props */}
       <ShowUser name={userName} />
+
       {/* destructuring */}
       <CarDetails brand='Ford' color='Vermelha' km={0} newCar={true} />
       <CarDetails brand='Fiat' color='Branco' km={4500} newCar={false} />
+
       {/* LOOP EM ARRAY DE OBJETOS */}
       {cars.map((car) => (
         <CarDetails key={car.id} brand={car.brand} color={car.color} km={car.km} newCar={car.newCar} />
       ))}
+
       {/* FRAGMENT */}
       <Fragment propFragment='teste' />
+
       {/* CHILDREN */}
       <Container myValue='testing 2'>
         <p>E este é o conteúdo</p>
@@ -66,8 +79,14 @@ function App() {
       <Container myValue='testing'>
         <h3>Testando o container</h3>
       </Container>
+
       {/* EXECUTAR FUNÇÃO */}
       <ExecuteFunction myFunction={showMessage} />
+
+      {/* STATE LIFT */}
+      <Message msg={message} />
+      <ChangeMessageState handleMessage={handleMessage} />
+      
     </div>
   );
 }
