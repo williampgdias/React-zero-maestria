@@ -16,6 +16,7 @@ import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
 import Message from './components/Message';
 import ChangeMessageState from './components/ChangeMessageState';
+import UserDetails from './components/UserDetails';
 
 function App() {
   const name = 'Bárbara';
@@ -37,16 +38,37 @@ function App() {
     setMessage(msg);
   };
 
+  const users = [
+    {
+      id: 1,
+      name: 'William',
+      age: 33,
+      job: 'Chef',
+    },
+    {
+      id: 2,
+      name: 'Bárbara',
+      age: 33,
+      job: 'Waitress',
+    },
+    {
+      id: 3,
+      name: 'Laura',
+      age: 3,
+      job: 'Bagunceira',
+    },
+  ];
+
   return (
     <div className='App'>
       <h1>Avançando em React</h1>
 
-      {/* Imagem em public */}
+      {/* IMAGEM EM PUBLIC */}
       <div>
         <img src='/img1.jpeg' alt='Paisagem' />
       </div>
 
-      {/* Imagem em Assets */}
+      {/* IMAGEM EM ASSETS */}
       <div>
         <img src={Connemara} alt='Cidade de Connemara vista de longe' />
       </div>
@@ -57,10 +79,10 @@ function App() {
       <ShowUser name={name} />
       <ShowUser name='William' />
 
-      {/* props */}
+      {/* PROPS */}
       <ShowUser name={userName} />
 
-      {/* destructuring */}
+      {/* DESTRUCTURING */}
       <CarDetails brand='Ford' color='Vermelha' km={0} newCar={true} />
       <CarDetails brand='Fiat' color='Branco' km={4500} newCar={false} />
 
@@ -86,7 +108,11 @@ function App() {
       {/* STATE LIFT */}
       <Message msg={message} />
       <ChangeMessageState handleMessage={handleMessage} />
-      
+
+      {/* DESAFIO */}
+      {users.map((user) => (
+        <UserDetails key={user.id} name={user.name} job={user.job} age={user.age} />
+      ))}
     </div>
   );
 }
