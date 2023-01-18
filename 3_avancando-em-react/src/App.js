@@ -11,6 +11,8 @@ import ConditionalRender from './components/ConditionalRender';
 import ShowUser from './components/ShowUser';
 import { useState } from 'react';
 import CarDetails from './components/CarDetails';
+import Fragment from './components/Fragment';
+import Container from './components/Container';
 
 function App() {
   const name = 'Bárbara';
@@ -21,6 +23,10 @@ function App() {
     { id: 2, brand: 'KIA', color: 'Branco', newCar: false, km: 3434 },
     { id: 3, brand: 'Renault', color: 'Azul', newCar: false, km: 234 },
   ];
+
+  const showMessage = () => {
+    console.log('Evento do componente pai.');
+  };
 
   return (
     <div className='App'>
@@ -50,6 +56,16 @@ function App() {
       {cars.map((car) => (
         <CarDetails brand={car.brand} color={car.color} km={car.km} newCar={car.newCar} />
       ))}
+      {/* FRAGMENT */}
+      <Fragment propFragment='teste' />
+      {/* CHILDREN */}
+      <Container myValue='testing 2'>
+        <p>E este é o conteúdo</p>
+      </Container>
+      <Container myValue='testing'>
+        <h3>Testando o container</h3>
+      </Container>
+      {/* EXECUTAR FUNÇÃO */}
     </div>
   );
 }
