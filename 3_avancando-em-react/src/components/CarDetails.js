@@ -5,13 +5,13 @@ const CarDetails = ({ brand, km, color, newCar }) => {
         <h2>Detalhes do carro</h2>
         <ul>
           <li>
-            Marca: <span>{brand}</span>
+            Marca: {brand}
           </li>
           <li>
-            KM: <span>{km}</span>
+            KM: {km}
           </li>
           <li>
-            Cor: <span>{color}</span>
+            Cor: {color}
           </li>
         </ul>
         {newCar && <p>Este carro é novo</p>}
