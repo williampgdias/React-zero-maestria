@@ -3,8 +3,7 @@ import './MyForm.css';
 import { useState } from 'react';
 
 const MyForm = () => {
-
-  // 3 - 
+  // 3 - GERENCIAMENTO DE DADOS
   const [name, setName] = useState();
   const [email, setEmail] = useState();
 
@@ -12,13 +11,17 @@ const MyForm = () => {
     setName(e.target.value);
   };
 
-  console.log(name);
-  console.log(email)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name);
+    console.log(email);
+  };
 
   return (
     <div>
       {/* 1 - CRIAÇÃO DE FORM */}
-      <form>
+      {/* 5 - ENVIO DE FORM */}
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor='name'>Name:</label>
           <input type='text' name='name' placeholder='Write your name' onChange={handleName} />
