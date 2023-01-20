@@ -8,6 +8,8 @@ function App() {
 
   const [name] = useState('Bárbara');
 
+  const redTitle = false;
+
   return (
     <div className='App'>
       {/* CSS GLOBAL */}
@@ -25,6 +27,9 @@ function App() {
       <h2 style={n < 10 ? { color: 'purple' } : { color: 'pink' }}>CSS Dinâmico</h2>
 
       <h2 style={name === 'William' ? { color: 'green', backgroundColor: '#000', padding: '25px' } : null}>CSS Dinâmico</h2>
+
+      {/* CLASSE DINÂMICA */}
+      <h2 className={redTitle ? 'red-title' : 'title'}>Este título vai ter classe dinâmica</h2>
     </div>
   );
 }
