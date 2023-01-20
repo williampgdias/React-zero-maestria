@@ -16,6 +16,10 @@ const MyForm = ({ user }) => {
     e.preventDefault();
     console.log(name);
     console.log(email);
+
+    // 7 - LIMPAR FORM
+    setName('');
+    setEmail('');
   };
 
   return (
