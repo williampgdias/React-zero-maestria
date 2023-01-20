@@ -3,6 +3,8 @@ import './MyForm.css';
 import { useState } from 'react';
 
 const MyForm = () => {
+
+  // 3 - 
   const [name, setName] = useState();
   const [email, setEmail] = useState();
 
@@ -11,6 +13,7 @@ const MyForm = () => {
   };
 
   console.log(name);
+  console.log(email)
 
   return (
     <div>
@@ -23,7 +26,7 @@ const MyForm = () => {
         {/* 2 - LABEL ENVOLVENDO INPUT */}
         <label>
           <span>Email:</span>
-          <input type='email' name='email' placeholder='Write your e-mail' />
+          <input type='email' name='email' placeholder='Write your e-mail' onChange={(e) => setEmail(e.target.value)} />
         </label>
         <input type='submit' value='Submit' />
       </form>
