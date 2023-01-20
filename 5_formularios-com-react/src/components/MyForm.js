@@ -7,7 +7,8 @@ const MyForm = ({ user }) => {
   // 3 - GERENCIAMENTO DE DADOS
   const [name, setName] = useState(user ? user.name : '');
   const [email, setEmail] = useState(user ? user.email : '');
-  const [bio, setBio] = useState('');
+  const [bio, setBio] = useState(user ? user.bio : '');
+  const [role, setRole] = useState(user ? user.role : '');
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -18,11 +19,13 @@ const MyForm = ({ user }) => {
     console.log(name);
     console.log(email);
     console.log(bio);
+    console.log(role);
 
     // 7 - LIMPAR FORM
     setName('');
     setEmail('');
     setBio('');
+    setRole('');
   };
 
   return (
@@ -43,6 +46,15 @@ const MyForm = ({ user }) => {
         <label>
           <span>Bio:</span>
           <textarea name='bio' placeholder='About you' onChange={(e) => setBio(e.target.value)} value={bio}></textarea>
+        </label>
+        {/* 9 - SELECT */}
+        <label>
+          <span>System Function</span>
+          <select name='role' onChange={(e) => setRole(e.target.value)}  value={role}>
+            <option value='user'>User</option>
+            <option value='editor'>Editor</option>
+            <option value='admin'>Admin</option>
+          </select>
         </label>
         <input type='submit' value='Submit' />
       </form>
