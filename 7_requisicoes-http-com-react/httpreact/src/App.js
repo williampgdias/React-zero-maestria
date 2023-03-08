@@ -35,6 +35,13 @@ function App() {
       },
       body: JSON.stringify(product),
     });
+
+    // 3 - CARREGAMENTO DINÂMICO
+    const addedProducts = await res.json();
+    setProducts((prevProducts) => [...prevProducts, addedProducts]);
+
+    setName('');
+    setPrice('');
   };
 
   return (
